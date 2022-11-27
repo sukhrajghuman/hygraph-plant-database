@@ -2,6 +2,7 @@ import { PlantBySlugQuery } from "__generated__/graphql";
 import { isObject } from "lodash";
 import Image from "next/image";
 import Layout from "src/layout/Layout";
+import Seo from "src/layout/Seo";
 
 import { Box, Grid, Heading, Text } from "@chakra-ui/react";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
@@ -18,9 +19,10 @@ const PlantDetailsPage = ({ plant }: PlantDetailsPageProps) => {
         templateRows={{ base: "1fr" }}
         mt="4"
       >
+        <Seo title={plant.botanicalName} description={plant.shortDescription} />
         <Box maxW="40rem" gridRow={{ base: "2", lg: "revert" }}>
-          <Heading>{plant?.botanicalName}</Heading>
-          <Text color="gray.600">{plant?.shortDescription}</Text>
+          <Heading>{plant.botanicalName}</Heading>
+          <Text color="gray.600">{plant.shortDescription}</Text>
           <Prose>
             <Box h="30rem" mt="4" position="relative" borderRadius="2xl">
               <Image
@@ -53,11 +55,11 @@ const PlantDetailsPage = ({ plant }: PlantDetailsPageProps) => {
           <Text fontWeight="bold" mt="4">
             Common name
           </Text>
-          <Text>{plant?.commonName}</Text>
+          <Text>{plant.commonName}</Text>
           <Text fontWeight="bold" mt="4">
             Other names
           </Text>
-          <Text>{plant?.commonName}</Text>
+          <Text>{plant.commonName}</Text>
           <Text fontWeight="bold" mt="4">
             Other metadata
           </Text>

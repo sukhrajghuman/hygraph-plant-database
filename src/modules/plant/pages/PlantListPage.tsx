@@ -1,5 +1,6 @@
 import { PlantFamilyListQuery } from "__generated__/graphql";
 import Layout from "src/layout/Layout";
+import Seo from "src/layout/Seo";
 
 import { Heading, List, ListItem } from "@chakra-ui/react";
 import NextLink from "@components/NextLink";
@@ -10,6 +11,7 @@ interface PlantListPageProps
 const PlantListPage = ({ plantFamilies }: PlantListPageProps) => {
   return (
     <Layout>
+      <Seo title="Plant database" description="lorem ipsum" />
       <Heading>Plant list page</Heading>
 
       <List mt="4">

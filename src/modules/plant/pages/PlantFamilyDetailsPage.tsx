@@ -3,6 +3,7 @@ import { isObject, join } from "lodash";
 import { useRouter } from "next/router";
 import DefaultContainer from "src/layout/DefaultContainer";
 import Layout from "src/layout/Layout";
+import Seo from "src/layout/Seo";
 
 import { Heading, List, ListItem } from "@chakra-ui/react";
 import NextLink from "@components/NextLink";
@@ -24,6 +25,7 @@ const PlantFamilyDetailsPage = ({
     if (!isObject(plantFamily)) return <Heading>Coming soon</Heading>;
     return (
       <>
+        <Seo title={plantFamily.name} description={plantFamily.description} />
         <PlantBanner plantFamily={plantFamily} />
         <DefaultContainer py="8">
           <Heading as="h2">Associated species </Heading>
