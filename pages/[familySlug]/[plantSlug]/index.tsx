@@ -6,11 +6,12 @@ import {
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
 
+import PlantDetailsPage from "@modules/plant/pages/PlantDetailsPage";
 import { PLANT_BY_SLUG, PLANT_LIST } from "@modules/plant/schema";
 import { graphqlClient } from "@services/PlantService";
 
 const Home: NextPage<PlantBySlugQuery> = ({ plant }) => {
-  return <>{JSON.stringify(plant, null, 2)}</>;
+  return <PlantDetailsPage plant={plant} />;
 };
 
 export default Home;

@@ -15,6 +15,7 @@
     "@chakra-ui/react": "^2.4.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@nikolovlazar/chakra-ui-prose": "^1.2.1",
     "@types/react-dom": "18.0.9",
     "dotenv": "^16.0.3",
     "framer-motion": "^7.6.12",

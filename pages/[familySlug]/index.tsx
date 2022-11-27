@@ -6,7 +6,7 @@ import {
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
 
-import PlantFamilyDetails from "@modules/plant/pages/PlantFamilyDetails";
+import PlantFamilyDetails from "@modules/plant/pages/PlantFamilyDetailsPage";
 import {
   PLANT_FAMILY_LIST,
   PLANT_LIST_BY_FAMILY_SLUG,

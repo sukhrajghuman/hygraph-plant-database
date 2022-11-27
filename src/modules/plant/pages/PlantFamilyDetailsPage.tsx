@@ -9,15 +9,15 @@ import NextLink from "@components/NextLink";
 
 import PlantBanner from "../components/PlantBanner";
 
-export type PlantFamilyDetailsProps = Pick<
+export type PlantFamilyDetailsPageProps = Pick<
   PlantListByFamilySlugQuery,
   "plants" | "plantFamily"
 >;
 
-const PlantFamilyDetails = ({
+const PlantFamilyDetailsPage = ({
   plants,
   plantFamily,
-}: PlantFamilyDetailsProps) => {
+}: PlantFamilyDetailsPageProps) => {
   const { asPath } = useRouter();
 
   const renderMain = () => {
@@ -44,4 +44,4 @@ const PlantFamilyDetails = ({
   return <Layout fullWidth>{renderMain()}</Layout>;
 };
 
-export default PlantFamilyDetails;
+export default PlantFamilyDetailsPage;
