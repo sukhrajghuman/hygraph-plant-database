@@ -17,6 +17,11 @@ export const PLANT_LIST_BY_FAMILY_SLUG = gql`
       slug
       shortDescription
     }
+    plantFamily(where: { slug: $plantFamilySlug }) {
+      name
+      description
+      slug
+    }
   }
 `;
 

@@ -6,8 +6,8 @@ const theme = extendTheme(
   {
     styles,
   },
-  withDefaultSize({ size: "lg", components: ["Heading"] }),
-  withDefaultSize({ size: "md", components: ["Text"] })
+  withDefaultSize({ size: "xl", components: ["Heading"] }),
+  withDefaultSize({ size: "lg", components: ["Text"] })
 ) as ChakraTheme;
 
 export default theme;

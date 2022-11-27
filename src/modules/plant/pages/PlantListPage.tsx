@@ -1,17 +1,24 @@
 import { PlantFamilyListQuery } from "__generated__/graphql";
-import Layout from "src/layout/layout";
+import Layout from "src/layout/Layout";
 
-import { Heading, Text } from "@chakra-ui/react";
+import { Heading, List, ListItem } from "@chakra-ui/react";
+import NextLink from "@components/NextLink";
 
 interface PlantListPageProps
   extends Pick<PlantFamilyListQuery, "plantFamilies"> {}
+
 const PlantListPage = ({ plantFamilies }: PlantListPageProps) => {
   return (
     <Layout>
       <Heading>Plant list page</Heading>
-      {plantFamilies.map(({ name }, i) => (
-        <Text key={i}>{name}</Text>
-      ))}
+
+      <List mt="4">
+        {plantFamilies.map(({ name, slug }, i) => (
+          <ListItem key={i}>
+            <NextLink href={slug}>{name}</NextLink>
+          </ListItem>
+        ))}
+      </List>
     </Layout>
   );
 };

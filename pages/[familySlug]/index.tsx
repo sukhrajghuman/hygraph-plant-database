@@ -6,14 +6,23 @@ import {
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
 
+import PlantFamilyDetails from "@modules/plant/pages/PlantFamilyDetails";
 import {
   PLANT_FAMILY_LIST,
   PLANT_LIST_BY_FAMILY_SLUG,
 } from "@modules/plant/schema";
 import { graphqlClient } from "@services/PlantService";
 
-const Home: NextPage<PlantListByFamilySlugQuery> = ({ plants }) => {
-  return <>{JSON.stringify(plants, null, 2)}</>;
+export type PlantFamilyDetailsData = Pick<
+  PlantListByFamilySlugQuery,
+  "plants" | "plantFamily"
+>;
+
+const Home: NextPage<PlantListByFamilySlugQuery> = ({
+  plants,
+  plantFamily,
+}) => {
+  return <PlantFamilyDetails plants={plants} plantFamily={plantFamily} />;
 };
 
 export default Home;

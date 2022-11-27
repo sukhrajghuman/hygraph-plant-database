@@ -3,11 +3,20 @@ import { PropsWithChildren } from "react";
 import DefaultContainer from "./DefaultContainer";
 import Header from "./Header";
 
-const Layout = ({ children }: PropsWithChildren<{}>) => {
+const Layout = ({
+  fullWidth = false,
+  children,
+}: PropsWithChildren<{ fullWidth?: boolean }>) => {
   return (
     <>
       <Header />
-      <DefaultContainer as="main">{children}</DefaultContainer>
+      {fullWidth ? (
+        children
+      ) : (
+        <DefaultContainer as="main" py="8">
+          {children}
+        </DefaultContainer>
+      )}
     </>
   );
 };
