@@ -13,8 +13,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@libs/*": ["src/libs/*"],
+      "@modules/*": ["src/modules/*"],
+      "@services/*": ["src/services/*"],
+      "@components/*": ["src/components/*"],
+      "@theme/*": ["src/theme/*"],
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.js", "src/config/mocks.js", "src/libs"],
   "exclude": ["node_modules"]
 }
