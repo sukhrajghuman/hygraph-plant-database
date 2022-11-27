@@ -1,3 +1,14 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals"],
+  "plugins": ["import", "testing-library"],
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "rules": {
+
+        "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }]
+      },
+      "excludedFiles": ["**/src/ui/**/*", "**/src/theme/**/*"]
+    }
+  ]
 }
