@@ -50,23 +50,14 @@ export const getStaticProps: GetStaticProps<
 > = async ({ params }) => {
   const { familySlug } = (params as FamilyParams) ?? {};
 
-  try {
-    const data = await graphqlClient.request<
-      PlantListByFamilySlugQuery,
-      PlantListByFamilySlugQueryVariables
-    >(PLANT_LIST_BY_FAMILY_SLUG, {
-      plantFamilySlug: familySlug,
-    });
+  const data = await graphqlClient.request<
+    PlantListByFamilySlugQuery,
+    PlantListByFamilySlugQueryVariables
+  >(PLANT_LIST_BY_FAMILY_SLUG, {
+    plantFamilySlug: familySlug,
+  });
 
-    return {
-      props: data,
-    };
-  } catch (error) {
-    return {
-      redirect: {
-        destination: "/404",
-        permanent: false,
-      },
-    };
-  }
+  return {
+    props: data,
+  };
 };
